@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Serene Strokes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Internal CSS for hover effect and card styling */
+        .art-card {
+            transition: transform 0.2s; /* Smooth scaling transition */
+            cursor: pointer;
+        }
+        
+        .art-card:hover {
+            transform: scale(1.05); /* Scale up on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+
+        .art-image {
+            height: 250px; /* Fixed height for all images */
+            object-fit: cover; /* Ensure images cover the card without distortion */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Serene Strokes</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="artist.html">Artist Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container text-center my-5">
+        <h1>Art Gallery</h1>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/image.webp" alt="Art 1" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 1</h5>
+                        <p class="card-text">Description for Art 1 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/european-paintings.jpg" alt="Art 2" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 2</h5>
+                        <p class="card-text">Description for Art 2 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/most-famous-paintings-2.jpg" alt="Art 3" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 3</h5>
+                        <p class="card-text">Description for Art 3 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/NTIV_HAMH_1139653-001.jpg" alt="Art 4" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 4</h5>
+                        <p class="card-text">Description for Art 4 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/image (1).webp" alt="Art 5" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 5</h5>
+                        <p class="card-text">Description for Art 5 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card art-card">
+                    <img src="images/632px-Attributes_of_Music.jpg" alt="Art 6" class="card-img-top art-image" data-bs-toggle="modal" data-bs-target="#artModal" onclick="showArt(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Title 6</h5>
+                        <p class="card-text">Description for Art 6 goes here. This is a brief description.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for larger image view -->
+    <div class="modal fade" id="artModal" tabindex="-1" aria-labelledby="artModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="artModalLabel">Art Piece</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalArt" src="" alt="Art Piece" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Serene Strokes. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Function to display the clicked art in the modal
+        function showArt(element) {
+            document.getElementById('modalArt').src = element.src;
+            document.getElementById('artModalLabel').textContent = element.alt; // Set modal title to alt text
+        }
+    </script>
+</body>
+</html>
